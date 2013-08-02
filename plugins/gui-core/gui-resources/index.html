@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Live Blog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="images/favicon.ico" rel="icon" media="all" type="image/x-icon" >
+	<link href="images/favicon.ico" rel="SHORTCUT ICON" type="image/x-icon" > 
+	<script>
+	//<![CDATA[
+		var superdesk = (function(d){
+			var self = this;
+			self.data = {
+				language: 'en',
+				frontendServer: '//localhost:8080'
+			};
+			self.data.baseUrl = self.data.frontendServer + '/content/lib/core/scripts/';
+			self.data.loadJs = function(path) {
+						console.log('loadJs')
+						var ls = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+						ls.type = "text/javascript"; s.async = true;
+						ls.src = path.indexOf('//') === -1 ? 
+							self.data.baseUrl + path + '.js?version=' + (self.data.version || parseInt((new Date()).getTime()/60000)):
+							path;
+						s.parentNode.insertBefore( ls, s ); return ls;
+			}
+			self.data.loadJs('loader');
+			return self.data;
+		})(document);
+	//]]>	
+	</script>
+	</head>
+<body>
+
+</body>
+</html>
