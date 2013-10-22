@@ -1,7 +1,7 @@
 
 /* post verification colors */
 @label-verified-color : #37b300;
-@label-unverified-color : #37b300;
+@label-unverified-color : #d10d0d;
 @label-onverification-color : #ffa200;
 
 
@@ -1529,7 +1529,7 @@ overrides
 .verification-box {
     position: absolute;
     top:10px;
-    right:-60px;
+    right:10px;
     //.transition( all 0.3s ease);
     .verification-label {
          display: inline-block;
@@ -1551,15 +1551,26 @@ overrides
             }
         }
         .dropdown-menu {
-            li span {
-                border-left:4px solid #7e7e7e;
-                margin-right: 10px;
-                &.label-verified { border-color: @label-verified-color; }
-                &.label-unverified { border-color: @label-unverified-color; }
-                &.label-onverification { border-color: @label-onverification-color; }
+            li {
+            	border: 0 ;
+				padding-left: 5px !important;
+				padding-top: 3px !important;
+				margin: 0;
+				margin-bottom: 3px;
+				&:hover {
+					.box-shadow(0 0 0 0 #000) !important;
+				}
+            	span {
+	                border-left:4px solid #7e7e7e;
+	                margin-right: 10px;
+	                &.label-verified { border-color: @label-verified-color; }
+	                &.label-unverified { border-color: @label-unverified-color; }
+	                &.label-onverification { border-color: @label-onverification-color; }
+	            }
             }
         }
     }
+
     
     .verification-assign {
         display: inline-block;
@@ -1579,6 +1590,16 @@ overrides
             }
             &:hover a, &.open a {
                 background: #cacaca !important;
+            }
+            .assignment-result-list {
+            	ul {
+            		top:0 !important;
+            		li {
+            			&:hover {
+            				border-color: #e8e8e8;
+            			}
+            		}
+            	}
             }
         }
     }
@@ -1609,19 +1630,19 @@ overrides
     }
 }
     
-.verification-verified {
+.post-verified {
     .verification-label a, .verification-label.open a { 
         background:  @label-verified-color; 
         &:hover { background:  @label-verified-color; }
         }
 }
-.verification-unverified {
+.post-unverified {
     .verification-label a, .verification-label.open a  { 
         background:  @label-unverified-color; 
         &:hover { background:  @label-unverified-color; }
         }
 }
-.verification-onverification {
+.post-onverification {
     .verification-label a, .verification-label.open a  { 
         background:  @label-onverification-color; 
         &:hover { background:  @label-onverification-color; }
