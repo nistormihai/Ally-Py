@@ -411,6 +411,9 @@ Open/Closed blogs
     position: relative;
     top: 105px;
 	background: #FFF;
+	fieldset {
+		margin-bottom: 50px;
+	}
 	&.main-section {
 		padding-bottom:0px !important;
 		margin-bottom: 62px !important; 
@@ -424,30 +427,50 @@ Open/Closed blogs
 		}
 		.embed-script-input {
 			width: 500px !important;
-			height: auto !important;
-			min-height: 70px;
+			height: auto!important;
+			min-height: 130px !important;
 		}
 	}
 	.config-small-input {
-		width: 270px !important;
+		width: 180px !important;
 	}
 	.internal-collabs, .span8-width {
 		width: 800px;
 	}
-
+	.input-prepend {
+		input[type="text"] {
+			height: 28px !important;
+			width: 397px !important;
+		}
+	}
+	.media-thumb {
+		img {
+			margin: 5px 0;
+			width: 300px;
+		}
+	}
+	.sf-toggle-custom {
+		margin-top: 5px; 
+	}
 	.api-keys {
-		ol {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			margin-top: 3px;
-			width: 500px;
-			> li {
-				line-height: 22px;
-				margin-bottom: 10px;
-				font-weight: bold;
-				text-transform: capitalize;
-				color: #666;
+		padding-top: 20px;
+		.control-label {
+			text-transform: capitalize;
+		}
+		.controls {
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				li {
+					div {
+						margin: 5px 0;
+						color: #666;
+					}
+					input {
+						margin-bottom: 5px; 
+					}
+				}
 			}
 		}
 	}
