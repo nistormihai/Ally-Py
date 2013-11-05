@@ -1,4 +1,9 @@
 
+/* post verification colors */
+@label-verified-color : #37b300;
+@label-unverified-color : #d10d0d;
+@label-onverification-color : #ffa200;
+
 
 .post-list {
 	list-style: none;
@@ -32,6 +37,16 @@
     padding: 8px 8px 8px 17px !important;
     position:relative;
     .border-radius(3px);
+
+    &.post-verified {
+    	border-left : 4px solid @label-verified-color;
+    }
+    &.post-unverified {
+    	border-left : 4px solid @label-unverified-color;
+    }
+    &.post-onverification {
+    	border-left : 4px solid @label-onverification-color;
+    }
 
     figure {
     	.posts-avatar();
@@ -1386,8 +1401,8 @@ overrides
 	background-color: #f4f6f7;
 	border-color: #c4e3e9;
 	p {
-		margin-bottom:3px;
-		&.feed-info {
+		margin:3px 0;
+		&.feed-info, button {
 			.label {
 				margin-bottom: 3px;
 				display: inline-block;
@@ -1514,7 +1529,7 @@ overrides
 .verification-box {
     position: absolute;
     top:10px;
-    right:-60px;
+    right:10px;
     //.transition( all 0.3s ease);
     .verification-label {
          display: inline-block;
@@ -1536,16 +1551,26 @@ overrides
             }
         }
         .dropdown-menu {
-            li span {
-                border-left:4px solid #7e7e7e;
-                margin-right: 10px;
-                &.label-assigned { border-color: #41b8cc; }
-                &.label-verified { border-color: #37b300; }
-                &.label-unverified { border-color: #cf0000; }
-                &.label-onverification { border-color: #ffa200; }
+            li {
+            	border: 0 ;
+				padding-left: 5px !important;
+				padding-top: 3px !important;
+				margin: 0;
+				margin-bottom: 3px;
+				&:hover {
+					.box-shadow(0 0 0 0 #000) !important;
+				}
+            	span {
+	                border-left:4px solid #7e7e7e;
+	                margin-right: 10px;
+	                &.label-verified { border-color: @label-verified-color; }
+	                &.label-unverified { border-color: @label-unverified-color; }
+	                &.label-onverification { border-color: @label-onverification-color; }
+	            }
             }
         }
     }
+
     
     .verification-assign {
         display: inline-block;
@@ -1565,6 +1590,16 @@ overrides
             }
             &:hover a, &.open a {
                 background: #cacaca !important;
+            }
+            .assignment-result-list {
+            	ul {
+            		top:0 !important;
+            		li {
+            			&:hover {
+            				border-color: #e8e8e8;
+            			}
+            		}
+            	}
             }
         }
     }
@@ -1595,28 +1630,22 @@ overrides
     }
 }
     
-.verification-assigned {
-    .verification-label a { 
-        background:  #41b8cc; 
-        &:hover { background:  #41b8cc; }
-    }
-}
-.verification-verified {
+.post-verified {
     .verification-label a, .verification-label.open a { 
-        background:  #37b300; 
-        &:hover { background:  #37b300; }
+        background:  @label-verified-color; 
+        &:hover { background:  @label-verified-color; }
         }
 }
-.verification-unverified {
+.post-unverified {
     .verification-label a, .verification-label.open a  { 
-        background:  #cf0000; 
-        &:hover { background:  #cf0000; }
+        background:  @label-unverified-color; 
+        &:hover { background:  @label-unverified-color; }
         }
 }
-.verification-onverification {
+.post-onverification {
     .verification-label a, .verification-label.open a  { 
-        background:  #ffa200; 
-        &:hover { background:  #ffa200; }
+        background:  @label-onverification-color; 
+        &:hover { background:  @label-onverification-color; }
         }
 }
     

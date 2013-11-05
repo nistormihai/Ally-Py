@@ -134,6 +134,7 @@
 /* USER SCREEEn - DETAIL PANE */
 @user-details-pane-width : 500px;
 @user-details-header-height : 37px;
+
 .user-details-pane {
   position: absolute;
   top: 7px;
@@ -148,8 +149,22 @@
   .transition(all 0.3s ease);
   .border-radius(0px 5px 5px 0px);
   .box-shadow(0 0 5px 0 #a8a8a8);
+
   &.open {
     left:0; 
+  }
+
+  &.right {
+    left:auto;
+    right: -@user-details-pane-width;
+    .border-radius(5px 0px 0px 5px);
+    border-width: 1px 0px 1px 1px;
+    &.open {
+      right: 0;
+    }
+     .user-details-header {
+       .border-radius(5px 0px 0px 0px) !important;
+     }
   }
 
   ::-webkit-scrollbar {
@@ -193,6 +208,7 @@
     padding-right: 35px;
   }
 
+
   /* user-detail-pane content which can be scrollable*/ 
   .user-details-content {
     position: absolute;
@@ -210,6 +226,9 @@
       float: left;
       &:first-child {
         margin-right: 10%
+      }
+      &.column-left {
+        margin-right: 10%;
       }
     }
   }
@@ -384,6 +403,8 @@
       background: #fff;
       position: relative;
       z-index: 2;
+      margin: 0;
+      border: 0;
     }
     .stats-list {
       list-style-type: none;
