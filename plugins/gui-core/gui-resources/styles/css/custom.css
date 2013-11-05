@@ -31,7 +31,20 @@ html, body{
 a.close {
 	color: #a0a0a0 !important;
 }
-	
+a.undo-delete {
+	color: #787878 !important;
+	font-size: 12px;
+}
+a.undo-delete i {
+	margin-right: 5px;
+}
+a.undo-delete:hover {
+	text-decoration: none;
+	color: #444 !important;
+}
+.toolbox-wide {
+	width: 90px !important;
+}
 .btn-primary-gv {
 	background-color: #96c912;
 	background-image: -moz-linear-gradient(top, #96c912, #5c9315);
