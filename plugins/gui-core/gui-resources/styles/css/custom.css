@@ -42,9 +42,7 @@ a.undo-delete:hover {
 	text-decoration: none;
 	color: #444 !important;
 }
-.toolbox-wide {
-	width: 90px !important;
-}
+
 .btn-primary-gv {
 	background-color: #96c912;
 	background-image: -moz-linear-gradient(top, #96c912, #5c9315);
@@ -1748,6 +1746,7 @@ a.collaborator-name-large  {
 	font-size: 16px;
 }
 /* end of login popup style override */
+
 .tmploader {
 	height: 100%;
 }
