@@ -1520,16 +1520,30 @@ overrides
     overflow:hidden;
     &:hover {
         overflow: visible;
-        .verification-box {
-           right:10px;
+        .hide-unhide-container {
+        	display: block;
         }
     }
 }
 
+
+.top-box-container {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 215px;
+	height: 20px;
+}
+
+.hide-unhide-container {
+	float: right;
+	margin-left: 10px;
+	margin-top: -2px; 
+	display: none;
+}
+
 .verification-box {
-    position: absolute;
-    top:10px;
-    right:10px;
+    float: right;
     //.transition( all 0.3s ease);
     .verification-label {
          display: inline-block;
