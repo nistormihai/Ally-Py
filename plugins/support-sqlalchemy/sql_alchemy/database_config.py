@@ -42,7 +42,7 @@ def alchemySessionCreator(): return sessionmaker(bind=alchemyEngine())
 
 @ioc.entity
 def alchemyEngine() -> Engine:
-    engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle())
+    engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle(), pool_size=100)
 
     if database_url().startswith('sqlite://'):
         @event.listens_for(engine, 'connect')
