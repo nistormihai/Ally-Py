@@ -42,12 +42,14 @@ def alchemySessionCreator(): return sessionmaker(bind=alchemyEngine())
 
 @ioc.entity
 def alchemyEngine() -> Engine:
-    engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle())
+   
 
     if database_url().startswith('sqlite://'):
+        engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle())
         @event.listens_for(engine, 'connect')
         def setSQLiteFKs(dbapi_con, con_record):
             dbapi_con.execute('PRAGMA foreign_keys=ON')
+    else:  engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle(), sql_max_overflow=100)        
 
     return engine
 
