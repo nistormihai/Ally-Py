@@ -49,7 +49,7 @@ def alchemyEngine() -> Engine:
         @event.listens_for(engine, 'connect')
         def setSQLiteFKs(dbapi_con, con_record):
             dbapi_con.execute('PRAGMA foreign_keys=ON')
-    else:  engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle(), pool_size=20, max_overflow=0)        
+    else:  engine = create_engine(database_url(), pool_recycle=alchemy_pool_recycle(), pool_size=30, max_overflow=60)        
 
     return engine
 
