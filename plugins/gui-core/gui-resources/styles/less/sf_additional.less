@@ -306,20 +306,38 @@
 		h5 {
 			border:0;
 		}
+		.clear-assignment {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: none;
+			border : 0;
+		}
 		.assignment-content {
+
 			.assignment-result-list {
 				margin-top: 10px;
 				height: 140px;
-				overflow: auto;
+				overflow-y: auto;
+				overflow-x: hidden;
 				ul {
 					list-style-type: none;
 					margin: 0; padding: 0;
 					top:0 !important;
+					width: 100% !important;
 					li {
 						height: 34px;
-						margin-bottom: 0;
 						padding: 4px !important;
 						line-height: 24px;
+						.border-radius(3px);
+						background: #fff;
+						border: 1px solid #fff;
+						border-bottom-color: #dbdbdb;
+						margin: 0;
+						&:hover {
+							background: #e8e8e8;
+							border-color:#dbdbdb;
+						}
 
 						.avatar-small {
 							width: 24px;
@@ -328,6 +346,8 @@
 							padding: 0;
 							margin:0;
 							background-size: 24px 24px;
+							float: left;
+							.border-radius(2px);
 						}
 						span {
 							font-size: 13px;
