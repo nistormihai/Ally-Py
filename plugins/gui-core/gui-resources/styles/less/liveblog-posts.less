@@ -484,6 +484,13 @@ overrides
 		.result-content {
 			overflow: hidden;
 		}
+		&.draggable {
+			.result-content {
+				figure {
+					display: none !important;
+				}
+			}
+		}
 		.video-container {     
 		    position: relative;     
 		    padding-bottom: 56.25%;     
@@ -518,6 +525,16 @@ overrides
 			}
 		}
 	}
+	&.soundcloud {
+		&.draggable {
+			.result-content {
+				figure {
+					display: none !important;
+				}
+			}
+		}
+	}
+
 }
 
 
