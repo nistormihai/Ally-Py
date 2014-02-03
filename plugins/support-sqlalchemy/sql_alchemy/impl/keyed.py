@@ -200,7 +200,7 @@ class EntityCRUDServiceAlchemy(EntitySupportAlchemy):
         assert self.modelType.isValid(entity), 'Invalid entity %s, expected %s' % (entity, self.Entity)
         assert isinstance(entity.Key, str), 'Invalid entity %s, with key %s' % (entity, entity.Key)
 
-        try: entityDb = self.session().query(self.Entity).filter(self.Entity.Key == entity.Key)
+        try: entityDb = self.session().query(self.Entity).filter(self.Entity.Key == entity.Key).one()
         except NoResultFound: raise InputError(Ref(_('Unknown key'), ref=self.Entity.Key))
         try:
             self.session().flush((copy(entity, entityDb),))
