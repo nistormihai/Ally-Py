@@ -509,7 +509,7 @@ define('jquery/rest',['jquery', 'jquery/utils'], function ($) {
 	    _construct: { value: function()
 	    {
 	        this.config = $.extend({}, this.config, {resourcePath: '/resources/my/'});
-            //this.requestOptions.headers.Authorization = 111;
+            this.requestOptions.headers.Authorization = localStorage.getItem('superdesk.login.session');
 	        resource.prototype._construct.apply(this, arguments);
 	        
 	    }, enumerable: true, configurable: true, writable: true }  
