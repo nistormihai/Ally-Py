@@ -1769,3 +1769,25 @@ a.collaborator-name-large  {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+.navbar-fixed-top .loader {
+	width: 90px !important;
+}
+	.navbar-fixed-top .loader div {
+		height: 20px;
+		line-height: 20px;
+		margin-top: 9px !important;
+	}
+		.navbar-fixed-top .loader .top-loading-text {
+			
+		}
+		.navbar-fixed-top .loader .top-loading-wheel {
+			background: url("../../images/loading-dark.gif") no-repeat 0 0;
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 7px;
+			margin-top: -1px;
+		}
