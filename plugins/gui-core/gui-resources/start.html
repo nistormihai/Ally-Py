@@ -22,8 +22,6 @@
 		this.lib_url = this.content_url + '/{lib_core}';
 		this.lib_js_url = this.lib_url + 'scripts/js/%s';
 		this.lib_css_url = this.lib_url + 'styles/css/%s';
-		this.version = 12;
-		this.url_args = 'v=' + this.version;
 		// other
 		this.lib_js_urn = '{lib_core}/scripts/js/'.replace(/\/+/g, '/');
 		
@@ -48,14 +46,26 @@
 		
 	};
 	</script>
-	<script>
-		var require = {
-			baseUrl: config.coreScripts(''),
-			urlArgs: config.url_args,
-			deps: ['main']
-		};		
-	</script>	
-	<script>document.write('<script src="'+ config.coreScripts('require.js') +'"><'+'/script>')</script>
+	<script type="text/javascript">
+		var allyAdmin = {}, require;
+		allyAdmin.loadJs = function(path) {
+			var ls = document.createElement('script'), s = document.getElementsByTagName('script')[0];
+			ls.type = "text/javascript"; s.async = true;
+			ls.src = path.indexOf('//') === -1 ? 
+			config.coreScripts(path) + '?version=' + parseInt((new Date()).getTime()/600000):
+			path;
+			s.parentNode.insertBefore( ls, s ); return ls;
+		};
+		allyAdmin.callbackVersion = function(ver) {
+			require = {
+				baseUrl: config.coreScripts(''),
+				urlArgs: 'version=' + ver.major + '.' + ver.minor + '.' + ver.revision,
+				deps: ['main']
+			};
+			this.loadJs(config.coreScripts('require.js'));
+		}
+		allyAdmin.loadJs('version.js');
+	</script>
 	<script>document.write('<style>'+
 		'@IMPORT url("'+ config.coreStyles('bootstrap.css') + '?' + config.url_args + '");'+
 		'@IMPORT url("'+ config.coreStyles('responsive.css') + '?' + config.url_args +'");'+
