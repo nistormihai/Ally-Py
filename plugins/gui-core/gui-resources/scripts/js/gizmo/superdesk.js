@@ -181,8 +181,11 @@ define(['gizmo', 'jquery', 'jquery/superdesk'], function(giz, $, superdesk)
             _uniq: uniq, 
             pushUnique: function()
             { 
-                return uniq.set(this.hash(), this); 
-            } 
+                return uniq.set(this.hash(), this);
+            },
+            removeUnique: function() {
+                uniq.remove(this.hash()); 
+            }
         }, arguments[0] );
         return Model;
     };
