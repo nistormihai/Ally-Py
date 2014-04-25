@@ -210,4 +210,5 @@ class ReaderInFile:
             self._file = None
             
             self._chain.callBack(lambda: os.remove(self._path))
+            self._chain.callBack(lambda: self._requestCnt.source.close())
             return self._chain
