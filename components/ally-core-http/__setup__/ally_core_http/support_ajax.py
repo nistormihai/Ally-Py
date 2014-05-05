@@ -31,7 +31,7 @@ def headers_ajax() -> dict:
     return {
             'Access-Control-Allow-Origin':['*'],
             'Access-Control-Allow-Headers':['X-Filter', 'X-HTTP-Method-Override', 'X-Format-DateTime', 'Authorization',
-                                            'X-CAPTCHA-Challenge', 'X-CAPTCHA-Response'],
+                                            'X-CAPTCHA-Challenge', 'X-CAPTCHA-Response','content-type', 'accept'],
             }  # TODO: remove Authorization header since that needs to be provided by the security gateway
 
 # --------------------------------------------------------------------
