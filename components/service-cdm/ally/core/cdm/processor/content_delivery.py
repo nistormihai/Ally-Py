@@ -155,6 +155,7 @@ class ContentDeliveryHandler(HandlerProcessorProceed):
                     responseCnt.length = size
                     responseCnt.type, _encoding = guess_type(entryPath)
                     if not responseCnt.type: responseCnt.type = self.defaultContentType
+                    responseCnt.type += '; charset=utf-8'
                     return
 
     # ----------------------------------------------------------------
