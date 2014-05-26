@@ -271,8 +271,8 @@ define('jqueryui/texteditor', ['jquery','jqueryui/widget', 'jqueryui/ext', 'jque
                             {
                                 var url = $(this).find('[data-option="image-value"]').val(),
                                     text = $(this).find('[data-option="image-text"]').val(),
-                                    width = $(this).find('[data-option="image-width"]').val() || thisPlugin.options.imageDefaultWidth,
-                                    height = $(this).find('[data-option="image-height"]').val() || thisPlugin.options.imageDefaultHeight,
+                                    width = $(this).find('[data-option="image-width"]').val() || false,
+                                    height = $(this).find('[data-option="image-height"]').val() || false,
                                     align = $(this).find('[data-toggle="buttons-radio"] .active');
                                 
                                 if( url === null )
