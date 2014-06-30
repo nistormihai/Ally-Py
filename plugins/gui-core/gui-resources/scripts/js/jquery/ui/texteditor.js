@@ -510,6 +510,7 @@ define('jqueryui/texteditor', ['jquery','jqueryui/widget', 'jqueryui/ext', 'jque
                                 parent = self.editTarget;
                                 parent.html($(this).find('textarea.editor-code').val());
                                 $(this).dialog('close');
+                                parent.trigger('htmlOkButton');
                             }
                         }
                     }
