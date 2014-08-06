@@ -12,11 +12,13 @@
 *.pyc
 *.properties
 *.properties.bak
+*Thumbs.db
 
 .project
 .pydevproject
 /.metadata/
 
 /superdesk/
+/live-blog/
 
 *.egg-info/
