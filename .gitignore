@@ -22,3 +22,7 @@
 /live-blog/
 
 *.egg-info/
+/node_modules/
+Gruntfile.js
+/tasks/
+package.json
