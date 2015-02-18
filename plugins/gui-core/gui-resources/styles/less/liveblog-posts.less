@@ -195,9 +195,24 @@
 			display: none;
 		}
 		&.image {
-			.result-content figure {
-				display: block;
-			}
+            .result-content {
+                figure {
+                    display: block;
+                    background: none;
+                    float:none;
+                    padding: 0;
+                    border: 0;
+                    margin:5px 0;
+                    width:auto !important;
+                    height:auto !important;
+                    img {
+                        width:auto !important;
+                        height:auto !important;
+                        padding: 0px;
+                        max-width: 100%;
+                    }
+                }
+            }            
 		}
 		&.link {
 			
